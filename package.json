@@ -1,0 +1,37 @@
+{
+  "name": "tailwindcss-starter",
+  "version": "1.0.0",
+  "description": "Tailwind CSS Starter",
+  "main": "index.js",
+  "scripts": {
+    "init-tailwind": "tailwind init tailwind.config.js",
+    "css": "tailwind build tailwind.config.css -c tailwind.config.js -o src/css/style.css",
+    "build:css": "postcss tailwind.config.css -o dist/css/style.min.css",
+    "build:html": "html-minifier --input-dir ./src --output-dir ./dist --collapse-whitespace",
+    "build": "npm run build:css && npm run build:html",
+    "dev": "npm run css && live-server src --port=8080",
+    "prod": "live-server dist --port=9090"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/viergiawan96"
+  },
+  "keywords": [
+    "tailwind",
+    "starter",
+    "css"
+  ],
+  "author": "satrio Yudho",
+  "license": "ISC",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.8.6",
+    "cssnano": "^4.1.10",
+    "html-minifier": "^4.0.0",
+    "live-server": "^1.2.1",
+    "postcss-cli": "^7.1.2",
+    "tailwindcss": "^1.8.5"
+  }
+}
